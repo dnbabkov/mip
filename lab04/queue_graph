@@ -1,0 +1,15 @@
+#!/usr/bin/gnuplot -persist
+
+set encoding utf8
+set term pdfcairo font "Arial,9"
+
+set out 'queue.pdf'
+
+set title "Изменение размера длины очереди на линке (R1–R2)"
+
+set style line 2
+
+set xlabel "t"
+set ylabel "Пакеты"
+
+plot "qm.out" using ($1):($5) with lines title "Размер очереди (в пакетах)"

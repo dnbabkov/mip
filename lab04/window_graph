@@ -1,0 +1,15 @@
+#!/usr/bin/gnuplot -persist
+
+set encoding utf8
+set term pdfcairo font "Arial,9"
+
+set out 'window.pdf'
+
+set title "Изменение размера окна TCP на всех источниках"
+
+set style line 2
+
+set xlabel "t"
+set ylabel "Размер окна"
+
+plot "WindowVsTimeReno" using ($1):($2) with lines title "Размер окна"
